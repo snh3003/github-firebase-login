@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "lco-proj": {
+      "hosting": {
+        "github-firebase-login": [
+          "lco-proj"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "lco-proj"
+  }
+}
