@@ -9,7 +9,6 @@ import { ToastrService } from 'ngx-toastr';
   styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent implements OnInit {
-
   email: any = null;
   password: string = '';
 
@@ -19,7 +18,7 @@ export class HeaderComponent implements OnInit {
     private toastr: ToastrService
   ) {
     authService.getUser().subscribe((user) => {
-      this.email = user!.email;
+      this.email = user?.email;
     });
   }
 
@@ -30,11 +29,11 @@ export class HeaderComponent implements OnInit {
   async userSignOut() {
     try {
       const res = await this.authService.signOut();
-      this.router.navigateByUrl(['/signin']);
+      //this.router.navigateByUrl(['/signin']);
       this.toastr.success('You have been signed out');
       this.toastr.info('Login again to continue');
       this.email = null;
-    }catch(e: any){
+    } catch (e: any) {
       this.toastr.error(e.message);
     }
   }
