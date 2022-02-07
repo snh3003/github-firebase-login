@@ -10,10 +10,7 @@ export class GithubAuthService {
 
   getUser = (username: string) => this.httpClient.get(this.gitUri + username);
 
-  getRepos = (username: string) => {
-    console.log('repo uri', `https://api.github.com/users/${username}/repos`);
-    return this.httpClient.get(
-      `https://api.github.com/users/${username}/repos`
-    );
-  };
+  getRepos(repoUrl: string) {
+    return this.httpClient.get(repoUrl);
+  }
 }
