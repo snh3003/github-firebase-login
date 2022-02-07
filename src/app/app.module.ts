@@ -25,6 +25,7 @@ import { CardComponent } from './components/card/card.component';
 import { HomeComponent } from './pages/home/home.component';
 import { SigninComponent } from './pages/signin/signin.component';
 import { SignupComponent } from './pages/signup/signup.component';
+import { PagenotfoundComponent } from './pages/pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { SignupComponent } from './pages/signup/signup.component';
     CardComponent,
     HomeComponent,
     SigninComponent,
-    SignupComponent
+    SignupComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
