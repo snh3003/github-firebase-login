@@ -4,21 +4,19 @@ import { GithubAuthService } from 'src/app/services/github-auth.service';
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  styleUrls: ['./home.component.css'],
 })
 export class HomeComponent implements OnInit {
-
   user: any = null;
   userName: string;
-  Error = null;
+  Error: any = null;
 
   constructor(
     private ref: ChangeDetectorRef,
     private githubService: GithubAuthService
-  ) { }
+  ) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   handleFindUser() {
     this.githubService.getUser(this.userName).subscribe(
@@ -27,12 +25,11 @@ export class HomeComponent implements OnInit {
         this.Error = null;
         this.ref.detectChanges();
       },
-      (error) => {
-        this.Error = error;
+      (err) => {
         this.user = null;
+        this.Error = 'User not found';
         this.ref.detectChanges();
       }
-    )
+    );
   }
-
 }

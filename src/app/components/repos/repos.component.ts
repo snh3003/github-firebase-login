@@ -18,22 +18,23 @@ export class ReposComponent implements OnInit {
   repos: any;
 
   constructor(
-    private gitHubService: GithubAuthService,
+    private githubService: GithubAuthService,
     private ref: ChangeDetectorRef,
     private toastr: ToastrService
   ) {}
 
   ngOnInit(): void {}
-
   ngOnChanges(): void {
+    console.log('repoUri in repos', this.repoUri);
     if (this.repoUri) {
-      this.gitHubService.getRepos(this.repoUri).subscribe(
+      this.githubService.getRepos(this.repoUri).subscribe(
         (repos: any) => {
           this.repos = repos;
+
           this.ref.detectChanges();
         },
-        (error) => {
-          this.toastr.error(error);
+        (err) => {
+          console.log('err:', err);
         }
       );
     }

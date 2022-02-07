@@ -1,4 +1,4 @@
-<div class="card user-card text-white">
+<div class="card user-card">
   <div class="background bg-info">
     <img
       class="img-fluid rounded-circle profile-pic border-2 border-white"
@@ -8,19 +8,12 @@
   </div>
   <div class="card-body">
     <div class="card-title h4">
-       {{ user.name }}
+      {{ user.name }}
     </div>
+    <p class="card-text"><b>Bio:</b> {{ user.bio }}</p>
+    <p class="card-text"><b>Blog:</b> {{ user.blog }}</p>
     <p class="card-text">
-      BIO: {{ user.bio }}
-    </p>
-    <p class="card-text">
-      COMPANY: {{ user.company }}
-    </p>
-    <p class="card-text">
-      BLOG: {{ user.blog }}
-    </p>
-    <p class="card-text">
-      updated_at: {{ user.updated_at | date: 'medium' }}
+      <b>Updated At:</b> {{ user.updated_at | date: "medium" }}
     </p>
   </div>
 </div>
