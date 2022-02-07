@@ -4,7 +4,6 @@
     (ngSubmit)="handleFindUser()"
   >
     <div class="form-group">
-      <label for="username">User Name</label>
       <input
         [(ngModel)]="userName"
         type="text"
@@ -13,7 +12,7 @@
         placeholder="Enter User Name"
       />
     </div>
-    <button type="submit" class="btn btn-primary mb-2">Find User</button>
+    <button type="submit" class="btn btn-primary">Find User</button>
     <div *ngIf="Error" class="alert alert-danger m-5" role="alert">
       {{ Error }}
     </div>
